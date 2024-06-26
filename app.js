@@ -5,7 +5,7 @@ const reviews = [
     name: "Ethan Shoe",
     job: "Local Guide",
     img: "https://lh3.googleusercontent.com/a-/ALV-UjXVKA2-1MD9ywFq8PDmFedOMHGl1iXFZ4JZGzEny9BZzpr-JTjQJA=s128-c0x00000000-cc-rp-mo-ba7",
-    text: "One of the best food trucks I've ever been to. I got the orange chicken and fries rice. The chicken was pretty unique but in a good way, I loved it. I also tried the crab rangoons and they were also great, and fairly priced.",
+    text: "One of the best food trucks I've ever been to. I got the orange chicken and fried rice. The chicken was pretty unique but in a good way, I loved it. I also tried the crab rangoons and they were also great, and fairly priced.",
   },
   {
     id: 2,
