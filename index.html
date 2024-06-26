@@ -12,14 +12,14 @@
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- styles -->
-    <link rel="stylesheet" href="styles2.css" />
-  </head><style>
-  @media (max-width:799px){
-.hidden {
-  display: none;
-}
-}
-</style>
+    <link rel="stylesheet" href="styles2.css" /></head
+  ><style>
+    @media (max-width: 799px) {
+      .hidden {
+        display: none;
+      }
+    }
+  </style>
   <body>
     <header id="home">
       <!-- navbar -->
@@ -31,7 +31,6 @@
             <button onclick="toggleVisibility()" class="nav-toggle">
               <i class="fas fa-bars"></i>
             </button>
-          
           </div>
           <!-- links -->
           <div id="thing" class="hidden">
@@ -47,7 +46,6 @@
       </nav>
       <!-- banner -->
       <div class="banner">
-      
         <div class="container">
           <h1>Bee's Style: Egg Rolls & Fried Rice</h1>
           <video autoplay muted loop id="bgVideo">
@@ -65,7 +63,6 @@
       </div>
     </header>
 
-    
     <!-- about -->
     <section id="about" class="section">
       <div class="title">
@@ -154,14 +151,16 @@
         "
       >
         <h2>Our <span>Menu</span></h2>
+        <a class="button-link" href="Main.pdf" target="_blank"
+          >View Full Menu Here</a
+        >
         <iframe
           src="./Main.pdf"
           frameborder="0"
-          width="50%"
+          width="100%"
           height="1000px"
           style="display: block"
         ></iframe>
-        <button id="fullScreenBtn" style="margin-top: 50px">Full Screen</button>
       </div>
     </section>
     <!-- tours -->
@@ -214,16 +213,26 @@
     <section id="reviews" class="section">
       <div class="container">
         <div class="title">
-          <h2>Our <span>Reviews</span></h2>
+          <h2>our reviews</h2>
           <div class="underline"></div>
         </div>
+        <!-- review -->
         <article class="review">
           <div class="img-container">
-            <img src="" id="person-img" alt="Reviewer Image" />
+            <img src="person-1.jpeg" id="person-img" alt="" />
           </div>
-          <h4 id="author">Business Name</h4>
-          <p id="job">Review Date</p>
-          <p id="info">Reviews could not be fetched.</p>
+          <h4 id="author">Ethan Shoe</h4>
+          <p id="job">Local Guide</p>
+          <div id="rating" style="text-align: center; font-size: 1.5em">
+            ⭐⭐⭐⭐⭐
+          </div>
+          <p id="info">
+            One of the best food trucks I've ever been to. I got the orange
+            chicken and fries rice. The chicken was pretty unique but in a good
+            way, I loved it. I also tried the crab rangoons and they were also
+            great, and fairly priced.
+          </p>
+          <!-- prev next buttons-->
           <div class="button-container">
             <button class="prev-btn">
               <i class="fas fa-chevron-left"></i>
@@ -232,9 +241,10 @@
               <i class="fas fa-chevron-right"></i>
             </button>
           </div>
-          <button class="random-btn">Surprise Me</button>
+          <!-- random button -->
+          <button class="random-btn">surprise me</button>
           <br />
-          <p style="font-size: 1.5em; font-weight: bold">
+          <p style="font-size: 1.5em; font-weight: bold; color: black">
             <b
               >"Bee's Style in Fayetteville serves up irresistible chicken fried
               rice" - Worth Sparkman, AXIOS NWA 2022</b
@@ -244,7 +254,7 @@
               ><img src="./food/review.webp"
             /></a>
           </p>
-          <p style="font-size: 1.5em; font-weight: bold">
+          <p style="font-size: 1.5em; font-weight: bold; color: black">
             <b
               >"Omg! This is one of my favorite food truck ever! I have tried
               their curry puffs, pad see ew, and spring rolls and im their
@@ -319,9 +329,7 @@
         <div class="google-map">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3225.010687370908!2d-94.16772372428414!3d36.068843408584385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c96f243dbcc83f%3A0xb6eb1298ece17511!2sBee%E2%80%99s%20Style%3A%20Egg%20Rolls%20%26%20Fried%20Rice!5e0!3m2!1sen!2sus!4v1719183646755!5m2!1sen!2sus"
-            width="600"
-            height="450"
-            style="border: 0"
+            class="responsive-iframe"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
@@ -340,8 +348,6 @@
     <a class="scroll-link top-link" href="#home">
       <i class="fas fa-arrow-up"></i>
     </a>
-
-
 
     <!-- javascript -->
     <script src="app.js"></script>

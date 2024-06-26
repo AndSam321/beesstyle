@@ -1,118 +1,101 @@
-// Define your Google Places API key and place ID
-
-const placeId = "ChIJP8i8PSRvyYcREXXh7JgS67Y&";
-
-// Elements from the DOM
+// local reviews data
+const reviews = [
+  {
+    id: 1,
+    name: "Ethan Shoe",
+    job: "Local Guide",
+    img: "https://lh3.googleusercontent.com/a-/ALV-UjXVKA2-1MD9ywFq8PDmFedOMHGl1iXFZ4JZGzEny9BZzpr-JTjQJA=s128-c0x00000000-cc-rp-mo-ba7",
+    text: "One of the best food trucks I've ever been to. I got the orange chicken and fries rice. The chicken was pretty unique but in a good way, I loved it. I also tried the crab rangoons and they were also great, and fairly priced.",
+  },
+  {
+    id: 2,
+    name: "Debisree Ray",
+    job: "Local Guide",
+    img: "https://lh3.googleusercontent.com/a-/ALV-UjVly3UaAqbhde1dh3oiI3HmJuPjNU47WBorjJp1HF6jBbLpWi5u=s128-c0x00000000-cc-rp-mo-ba7",
+    text: "Amazing food. The fried pork wantons were absolutely terrific. I ordered chicken pad Thai noodles whereas my husband ordered grilled chicken with broccoli. The quality and the taste is good, however, the portion wise it’s on the lessar side. My noodles were fine for me. But the grilled chicken portion was really less, which was compensated with white rice! So overall it was a bit dry to eat. You can sit and eat at the benches, the ambience is cool.",
+  },
+  {
+    id: 3,
+    name: "Mina Son",
+    job: "Local Guide",
+    img: "https://lh3.googleusercontent.com/a-/ALV-UjVFcZsgAyzzKT4rOpqIhY2G7xjIoNstmKQ1BJ44wsIG7KSfV_lC=s128-c0x00000000-cc-rp-mo-ba3",
+    text: "My husband and I recently got married and visited Fayetteville, AR as a honeymoon destination! I ordered chow mein with orange chicken on the side. We also ordered egg rolls and they were so delicious! 10/10!",
+  },
+  {
+    id: 4,
+    name: "Andrew Hensley",
+    job: "Local Guide",
+    img: "https://lh3.googleusercontent.com/a-/ALV-UjUBxU6nsc3e8I7iwgkkQLgOfjZD--hVu7kl0O2NCp8F8gays-hg=s128-c0x00000000-cc-rp-mo-ba4",
+    text: "They need a WHOLE restaurant because this food truck is sensational. Do not be afraid to come here. This food is unbelievable. ",
+  },
+  {
+    id: 5,
+    name: "beingbailey x",
+    job: "Local Guide",
+    img: "https://lh3.googleusercontent.com/a-/ALV-UjW28ah2j4NQDAGc7OUY04kaVIJCQsHcVz49bTpr_1fcm3Yaf19z=s128-c0x00000000-cc-rp-mo",
+    text: "My favorite food truck in all of NWA. Their eggrolls and crab rangoons are to die for. They are kind people, great service, great food, cannot say enough good about this little food truck! ",
+  },
+  {
+    id: 6,
+    name: "Alana Collins",
+    job: "Local Guide",
+    img: "https://lh3.googleusercontent.com/a-/ALV-UjWbAYVvaMuAtdFqoPrxy7koSpOSnqlaD3NpfwySnFQ5l4pez0xD=w200-h200-p-rp-mo-ba4-br100",
+    text: "This food is AMAZING! The only downside is the wait. When I went here the first time I waited over 20 minutes for rice. I was not going to come back but there food is THAT good. I came a second time and added egg rolls to my order and fell in love again. I am also happy to report that it took only 10 minutes. This is my new favorite spot. I’m so happy I found this little place. Just make sure you call ahead or be prepared to wait awhile.",
+  },
+];
+// select items
 const img = document.getElementById("person-img");
-const authorElement = document.getElementById("author");
-const jobElement = document.getElementById("job");
-const infoElement = document.getElementById("info");
+const author = document.getElementById("author");
+const job = document.getElementById("job");
+const info = document.getElementById("info");
 
-// Buttons for navigation and random review
 const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
 const randomBtn = document.querySelector(".random-btn");
 
-// Index of the currently displayed review
+// set starting item
 let currentItem = 0;
 
-// Function to fetch reviews from Google Places API
-// Function to fetch reviews from Google Places API
-function fetchReviews() {
-  fetch(`/api/reviews`)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(
-          `Failed to fetch reviews. Error ${response.status}: ${response.statusText}`
-        );
-      }
-      return response.json();
-    })
-    .then((data) => {
-      console.log("API response:", data); // Log the API response for debugging
-      if (
-        data.result &&
-        data.result.reviews &&
-        data.result.reviews.length > 0
-      ) {
-        const businessName = data.result.name || "Business Name";
-        document.title = `${businessName} Reviews`;
-        reviews = data.result.reviews;
-        showReview(currentItem);
-      } else {
-        console.error("No reviews found in response:", data);
-        showErrorMessage("No reviews found in response.");
-      }
-    })
-    .catch((error) => {
-      console.error("Error fetching reviews:", error);
-      showErrorMessage(`Error fetching reviews: ${error.message}`);
-    });
-}
+// load initial item
+window.addEventListener("DOMContentLoaded", function () {
+  const item = reviews[currentItem];
+  img.src = item.img;
+  author.textContent = item.name;
+  job.textContent = item.job;
+  info.textContent = item.text;
+});
 
-// Function to display a review
-function showReview(index) {
-  const review = reviews[index];
-  img.src = review.profile_photo_url || "default.jpg";
-  authorElement.textContent = review.author_name;
-  jobElement.textContent = new Date(review.time * 1000).toLocaleDateString();
-  infoElement.textContent = review.text;
+// show person based on item
+function showPerson(person) {
+  const item = reviews[person];
+  img.src = item.img;
+  author.textContent = item.name;
+  job.textContent = item.job;
+  info.textContent = item.text;
 }
-
-// Function to display error message
-function showErrorMessage() {
-  img.src = ""; // Clear image
-  authorElement.textContent = "Business Name"; // Display default business name
-  jobElement.textContent = ""; // Clear job
-  infoElement.textContent = "Reviews could not be fetched."; // Display error message
-}
-
-// Event listener for next button
+// show next person
 nextBtn.addEventListener("click", function () {
-  currentItem = (currentItem + 1) % reviews.length;
-  showReview(currentItem);
-});
-
-// Event listener for previous button
-prevBtn.addEventListener("click", function () {
-  currentItem = (currentItem - 1 + reviews.length) % reviews.length;
-  showReview(currentItem);
-});
-
-// Event listener for random button
-randomBtn.addEventListener("click", function () {
-  currentItem = Math.floor(Math.random() * reviews.length);
-  showReview(currentItem);
-});
-
-// Initialize: Fetch reviews when DOM content is loaded
-window.addEventListener("DOMContentLoaded", fetchReviews);
-
-// Function to toggle full-screen mode for the PDF iframe
-function toggleFullScreen() {
-  const iframe = document.getElementById("pdfIframe");
-  if (!document.fullscreenElement) {
-    if (iframe.requestFullscreen) {
-      iframe.requestFullscreen();
-    } else if (iframe.mozRequestFullScreen) {
-      iframe.mozRequestFullScreen();
-    } else if (iframe.webkitRequestFullscreen) {
-      iframe.webkitRequestFullscreen();
-    } else if (iframe.msRequestFullscreen) {
-      iframe.msRequestFullscreen();
-    }
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.mozCancelFullScreen) {
-      document.mozCancelFullScreen();
-    } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) {
-      document.msExitFullscreen();
-    }
+  currentItem++;
+  if (currentItem > reviews.length - 1) {
+    currentItem = 0;
   }
-}
+  showPerson(currentItem);
+});
+// show prev person
+prevBtn.addEventListener("click", function () {
+  currentItem--;
+  if (currentItem < 0) {
+    currentItem = reviews.length - 1;
+  }
+  showPerson(currentItem);
+});
+// show random person
+randomBtn.addEventListener("click", function () {
+  console.log("hello");
+
+  currentItem = Math.floor(Math.random() * reviews.length);
+  showPerson(currentItem);
+});
 
 // Function to handle tab switching
 function switchTab(tabId) {
@@ -150,5 +133,24 @@ about.addEventListener("click", function (e) {
   const tabId = e.target.dataset.id;
   if (tabId) {
     switchTab(tabId);
+  }
+});
+
+const fullScreenBtn = document.getElementById("fullScreenBtn");
+const menuFrame = document.getElementById("menu-frame");
+
+fullScreenBtn.addEventListener("click", () => {
+  console.log("Full Screen button clicked!");
+  if (menuFrame.requestFullscreen) {
+    menuFrame.requestFullscreen();
+  } else if (menuFrame.mozRequestFullScreen) {
+    /* Firefox */
+    menuFrame.mozRequestFullScreen();
+  } else if (menuFrame.webkitRequestFullscreen) {
+    /* Chrome, Safari & Opera */
+    menuFrame.webkitRequestFullscreen();
+  } else if (menuFrame.msRequestFullscreen) {
+    /* IE/Edge */
+    menuFrame.msRequestFullscreen();
   }
 });
