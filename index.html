@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Bee's Style: Egg Rolls & Fried Rice</title>
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- styles -->
+    <link rel="stylesheet" href="styles2.css" />
+  </head><style>
+  @media (max-width:799px){
+.hidden {
+  display: none;
+}
+}
+</style>
+  <body>
+    <header id="home">
+      <!-- navbar -->
+      <nav id="nav">
+        <div class="nav-center">
+          <!-- nav header -->
+          <div class="nav-header">
+            <img src="./download.png" class="logo" alt="logo" />
+            <button onclick="toggleVisibility()" class="nav-toggle">
+              <i class="fas fa-bars"></i>
+            </button>
+          
+          </div>
+          <!-- links -->
+          <div id="thing" class="hidden">
+            <ul class="links">
+              <li><a href="#home" class="scroll-link">home</a></li>
+              <li><a href="#about" class="scroll-link">about</a></li>
+              <li><a href="#menu" class="scroll-link">Menu</a></li>
+              <li><a href="#reviews" class="scroll-link">Reviews</a></li>
+              <li><a href="#contact" class="scroll-link">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- banner -->
+      <div class="banner">
+      
+        <div class="container">
+          <h1>Bee's Style: Egg Rolls & Fried Rice</h1>
+          <video autoplay muted loop id="bgVideo">
+            <source src="./drone.mp4" type="video/mp4" />
+            Your browser does not support HTML5 video.
+          </video>
+          <p>
+            Family-owned food truck located in the heart of Northwest Arkansas.
+            Providing great, tasty, and authentic Asian food that everyone can
+            enjoy! We hope you enjoy our food as much as we enjoy serving it to
+            you - Bee's Style.
+          </p>
+          <a href="#tours" class="scroll-link btn btn-white">explore gallery</a>
+        </div>
+      </div>
+    </header>
+
+    
+    <!-- about -->
+    <section id="about" class="section">
+      <div class="title">
+        <h2>about <span>us</span></h2>
+      </div>
+      <div class="about-center section-center">
+        <article class="about-img">
+          <img src="./FrontBees.jpeg" alt="" />
+        </article>
+        <article class="about">
+          <!-- btn container -->
+          <div class="btn-container">
+            <button
+              class="tab-btn active"
+              data-id="history"
+              data-img="./foodtruck.jpeg"
+            >
+              history
+            </button>
+            <button class="tab-btn" data-id="vision" data-img="./family.jpg">
+              vision
+            </button>
+            <button class="tab-btn" data-id="goals" data-img="./arkansas.jpg">
+              goals
+            </button>
+          </div>
+          <div class="about-content">
+            <!-- single item -->
+            <div class="content active" id="history">
+              <h4>history</h4>
+              <p>
+                Founded by Abbey, also known as "Bee,", our journey began with a
+                deep-rooted passion for cooking and a heartfelt desire to serve
+                others. Bee always knew she wanted to cook for others, so in
+                March 2018 when she courageously launched Bee's Style: Egg Rolls
+                & Fried Rice.
+                <br /><br />
+                Nestled in the vibrant heart of Northwest Arkansas, specifically
+                on the University of Arkansas campus, Bee's Style quickly became
+                a beloved spot in the local community. Bee's Style is dedicated
+                to amazing food made with love, and we are proud to serve our
+                customers with the best food and service possible.
+              </p>
+            </div>
+            <!-- end of single item -->
+            <!-- single item -->
+            <div class="content" id="vision">
+              <h4>family</h4>
+              <p>
+                From our family to yours, we welcome you with open arms and open
+                hearts! We are eager to be a part of this community and we hope
+                that our food leaves you with a lasting impression. We are proud
+                to serve you and we hope that you enjoy our food as much as we
+                enjoy serving it to you. <br /><br />
+              </p>
+            </div>
+            <!-- end of single item -->
+            <!-- single item -->
+            <div class="content" id="goals">
+              <h4>Action</h4>
+              <p>
+                Spread the word! We hope to continue to grow and expand our
+                business to reach more people in the community. Tag us in your
+                photos or just bring new faces along with you!<br /><br /><br />
+                Use the hashtag
+                <b style="font-weight: bold; font-size: 1.1em">#beesstyle</b> to
+                share your experience with us! We love to see our customers
+                enjoying our food and having a great time. <br /><br /><br />
+                Thank you for your continued support! We appreciate you!
+              </p>
+            </div>
+            <!-- end of single item -->
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- services -->
+    <section id="menu" class="section">
+      <div
+        class="title"
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding-top: 6rem;
+        "
+      >
+        <h2>Our <span>Menu</span></h2>
+        <iframe
+          src="./Main.pdf"
+          frameborder="0"
+          width="50%"
+          height="1000px"
+          style="display: block"
+        ></iframe>
+        <button id="fullScreenBtn" style="margin-top: 50px">Full Screen</button>
+      </div>
+    </section>
+    <!-- tours -->
+    <section id="tours" class="section">
+      <div class="title">
+        <h2>Check out the <span>Gallery</span></h2>
+        <div class="image-gallery">
+          <div class="gallery-item">
+            <img src="./food/Orange.jpg" alt="Fried Rice" />
+            <div class="overlay">
+              <div class="text">Orange Chicken Fried Rice</div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="./food/2022-09-02.jpg" alt="Egg Rolls" />
+            <div class="overlay">
+              <div class="text">Egg Rolls</div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="./food/GrilledChicken.jpg" alt="GrilledChicken" />
+            <div class="overlay">
+              <div class="text">Grilled Chicken and Broccoli</div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="./food/ORANGELOMEIN.jpg" alt="ORLM" />
+            <div class="overlay">
+              <div class="text">Orange Chicken with Lo Mein</div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="./food/2019-12-11.jpg" alt="BEEFBASIL" />
+            <div class="overlay">
+              <div class="text">Chicken Stirfry in Ginger Sauce</div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="./food/2021-09-10.jpg" alt="Spring Rolls" />
+            <div class="overlay">
+              <div class="text">Chalkboard</div>
+            </div>
+          </div>
+
+          <!-- Add more items as needed -->
+        </div>
+      </div>
+    </section>
+    <!-- reviews -->
+    <section id="reviews" class="section">
+      <div class="container">
+        <div class="title">
+          <h2>Our <span>Reviews</span></h2>
+          <div class="underline"></div>
+        </div>
+        <article class="review">
+          <div class="img-container">
+            <img src="" id="person-img" alt="Reviewer Image" />
+          </div>
+          <h4 id="author">Business Name</h4>
+          <p id="job">Review Date</p>
+          <p id="info">Reviews could not be fetched.</p>
+          <div class="button-container">
+            <button class="prev-btn">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="next-btn">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+          <button class="random-btn">Surprise Me</button>
+          <br />
+          <p style="font-size: 1.5em; font-weight: bold">
+            <b
+              >"Bee's Style in Fayetteville serves up irresistible chicken fried
+              rice" - Worth Sparkman, AXIOS NWA 2022</b
+            >
+            <a
+              href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.axios.com%2Flocal%2Fnw-arkansas%2F2022%2F02%2F08%2Fchicken-fried-rice-bees-style-truck-fayetteville&psig=AOvVaw399Xea9FO-hNAxhNQtCTqT&ust=1719288684141000&source=images&cd=vfe&opi=89978449&ved=0CBQQjhxqFwoTCMDuis2v84YDFQAAAAAdAAAAABAE"
+              ><img src="./food/review.webp"
+            /></a>
+          </p>
+          <p style="font-size: 1.5em; font-weight: bold">
+            <b
+              >"Omg! This is one of my favorite food truck ever! I have tried
+              their curry puffs, pad see ew, and spring rolls and im their
+              biggest fan." - Peggy W., Yelp 2022"
+            </b>
+            <a
+              href="https://www.yelp.com/biz/bees-style-egg-rolls-and-fried-rice-fayetteville"
+              ><img src="./food/Screenshot 2024-06-23 at 11.34.20 PM.png"
+            /></a>
+          </p>
+        </article>
+      </div>
+    </section>
+    <!-- Contact Us -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="title">
+          <h2>Contact <span>Us</span></h2>
+        </div>
+        <div class="contact-info">
+          <p style="font-size: 1.8em; font-weight: bold">
+            <b>Phone:</b> <a href="tel:+14794669060">+1 (479) 466-9060</a>
+          </p>
+          <p style="font-size: 1.8em; font-weight: bold">
+            Email:
+            <a href="mailto:beesfoodtruckbusiness@gmail.com"
+              >beesfoodtruckbusiness@gmail.com</a
+            >
+          </p>
+        </div>
+
+        <div class="social-media">
+          <h3>Give us a follow here!</h3>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <svg
+                width="24"
+                height="24"
+                fill="currentColor"
+                class="facebook-icon"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M22.675 0h-21.35c-0.734 0-1.325 0.591-1.325 1.325v21.351c0 0.733 0.591 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.097 1.893-4.785 4.657-4.785 1.325 0 2.464 0.098 2.797 0.142v3.24l-1.919 0.001c-1.504 0-1.794 0.715-1.794 1.763v2.309h3.587l-0.467 3.622h-3.12v9.294h6.116c0.733 0 1.324-0.591 1.324-1.324v-21.351c0-0.734-0.591-1.325-1.324-1.325z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/beesstylefoodtruck/"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <svg
+                width="24"
+                height="24"
+                fill="currentColor"
+                class="instagram-icon"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 0c-3.211 0-3.612 0.012-4.875 0.07-1.262 0.058-2.135 0.25-2.893 0.532-0.782 0.291-1.451 0.683-2.107 1.339s-1.049 1.326-1.339 2.107c-0.282 0.758-0.474 1.631-0.532 2.893-0.058 1.263-0.07 1.664-0.07 4.875s0.012 3.612 0.07 4.875c0.058 1.262 0.25 2.135 0.532 2.893 0.291 0.782 0.683 1.451 1.339 2.107s1.326 1.049 2.107 1.339c0.758 0.282 1.631 0.474 2.893 0.532 1.263 0.058 1.664 0.07 4.875 0.07s3.612-0.012 4.875-0.07c1.262-0.058 2.135-0.25 2.893-0.532 0.782-0.291 1.451-0.683 2.107-1.339s1.049-1.326 1.339-2.107c0.282-0.758 0.474-1.631 0.532-2.893 0.058-1.263 0.07-1.664 0.07-4.875s-0.012-3.612-0.07-4.875c-0.058-1.262-0.25-2.135-0.532-2.893-0.291-0.782-0.683-1.451-1.339-2.107s-1.326-1.049-2.107-1.339c-0.758-0.282-1.631-0.474-2.893-0.532-1.263-0.058-1.664-0.07-4.875-0.07zM12 2.16c3.175 0 3.557 0.011 4.809 0.07 1.166 0.054 1.799 0.243 2.214 0.404 0.558 0.216 0.956 0.473 1.376 0.893s0.678 0.818 0.893 1.376c0.162 0.415 0.35 1.048 0.404 2.214 0.059 1.252 0.07 1.634 0.07 4.809s-0.011 3.557-0.07 4.809c-0.054 1.166-0.243 1.799-0.404 2.214-0.216 0.558-0.473 0.956-0.893 1.376s-0.818 0.678-1.376 0.893c-0.415 0.162-1.048 0.35-2.214 0.404-1.252 0.059-1.634 0.07-4.809 0.07s-3.557-0.011-4.809-0.07c-1.166-0.054-1.799-0.243-2.214-0.404-0.558-0.216-0.956-0.473-1.376-0.893s-0.678-0.818-0.893-1.376c-0.162-0.415-0.35-1.048-0.404-2.214-0.059-1.252-0.07-1.634-0.07-4.809s0.011-3.557 0.07-4.809c0.054-1.166 0.243-1.799 0.404-2.214 0.216-0.558 0.473-0.956 0.893-1.376s0.818-0.678 1.376-0.893c0.415-0.162 1.048-0.35 2.214-0.404 1.252-0.059 1.634-0.07 4.809-0.07zM12 5.838c-3.407 0-6.162 2.754-6.162 6.162s2.754 6.162 6.162 6.162 6.162-2.754 6.162-6.162-2.754-6.162-6.162-6.162zM12 16.062c-2.24 0-4.062-1.822-4.062-4.062s1.822-4.062 4.062-4.062 4.062 1.822 4.062 4.062-1.822 4.062-4.062 4.062zM18.406 5.594c-0.796 0-1.44 0.644-1.44 1.44s0.644 1.44 1.44 1.44 1.44-0.644 1.44-1.44-0.644-1.44-1.44-1.44z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="google-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3225.010687370908!2d-94.16772372428414!3d36.068843408584385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c96f243dbcc83f%3A0xb6eb1298ece17511!2sBee%E2%80%99s%20Style%3A%20Egg%20Rolls%20%26%20Fried%20Rice!5e0!3m2!1sen!2sus!4v1719183646755!5m2!1sen!2sus"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="section">
+      <p>
+        copyright &copy; Made by Andrew Samountry
+        <span id="date"></span>. all rights reserved
+      </p>
+    </footer>
+    <a class="scroll-link top-link" href="#home">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+
+
+    <!-- javascript -->
+    <script src="app.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
